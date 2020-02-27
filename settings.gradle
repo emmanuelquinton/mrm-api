@@ -1,0 +1,3 @@
+rootProject.name = 'meeting-rooms-management'
+include 'mrm-domain-module'
+
