@@ -5,11 +5,13 @@ ext {
 
     assertjVersion = "3.15.0"
     junitVersion = "5.6.0"
+    mockitoVersion = "3.3.0"
 
     testDependencies = [
             junit_jupiter_api   : "org.junit.jupiter:junit-jupiter-api:" + junitVersion,
             junit_jupiter_params: "org.junit.jupiter:junit-jupiter-params:" + junitVersion,
             junit_jupiter_engine: "org.junit.jupiter:junit-jupiter-engine:" + junitVersion,
+            mockito_junit_jupiter: "org.mockito:mockito-junit-jupiter:" + mockitoVersion,
             assertj             : "org.assertj:assertj-core:" + assertjVersion
     ]
 
