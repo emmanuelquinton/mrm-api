@@ -1,4 +1,4 @@
-package org.equinton.mrm.domain;
+package org.equinton.mrm.domain.model;
 
 import org.assertj.core.api.Assertions;
 import org.equinton.mrm.domain.model.User;

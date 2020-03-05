@@ -20,6 +20,7 @@ dependencies {
 
     // tests
     testImplementation(testDependencies.assertj)
+    testImplementation(testDependencies.mockito_junit_jupiter)
     testImplementation(testDependencies.junit_jupiter_api)
     testImplementation(testDependencies.junit_jupiter_params)
     testRuntimeOnly(testDependencies.junit_jupiter_engine)
