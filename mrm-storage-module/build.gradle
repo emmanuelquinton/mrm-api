@@ -1,0 +1,37 @@
+plugins {
+    id 'org.springframework.boot' version  "${springBootVersion}"
+//    id 'io.spring.dependency-management'
+    id 'java'
+}
+
+
+test {
+    useJUnitPlatform()
+}
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+dependencies {
+    implementation project(':mrm-domain-module')
+    //common
+    implementation(commonDependencies.lombok)
+    annotationProcessor(commonDependencies.lombok)
+
+    // back
+    implementation(springbootDependencies.spring_boot_starter)
+    implementation(storageDependencies.spring_boot_data_jpa )
+    implementation(storageDependencies.postgres )
+    runtimeOnly(storageDependencies.h2)
+
+    // tests
+    testImplementation(testDependencies.assertj)
+    testImplementation(testDependencies.mockito_junit_jupiter)
+    testImplementation(testDependencies.junit_jupiter_api)
+    testImplementation(testDependencies.junit_jupiter_params)
+    testRuntimeOnly(testDependencies.junit_jupiter_engine)
+    testImplementation(springbootDependencies.spring_boot_starter_test)
+}
