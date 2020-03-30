@@ -1,20 +1,11 @@
 plugins {
-    id 'org.springframework.boot' version  "${springBootVersion}"
+  //  id 'org.springframework.boot' version  "${springBootVersion}"
 //    id 'io.spring.dependency-management'
     id 'java'
 }
 
 
-test {
-    useJUnitPlatform()
-}
-bootJar {
-    enabled = false
-}
 
-jar {
-    enabled = true
-}
 dependencies {
     implementation project(':mrm-domain-module')
     //common
