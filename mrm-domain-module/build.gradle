@@ -1,27 +1,13 @@
-plugins {
-    id 'java'
-}
 
-group 'org.equinton'
-version '0.0.1-SNAPSHOT'
-
-sourceCompatibility = 1.11
-
-repositories {
-    mavenCentral()
-}
-test {
-    useJUnitPlatform()
-}
 dependencies {
     //common
     implementation(commonDependencies.lombok)
     annotationProcessor(commonDependencies.lombok)
 
     // tests
-    testImplementation(testDependencies.assertj)
     testImplementation(testDependencies.mockito_junit_jupiter)
     testImplementation(testDependencies.junit_jupiter_api)
     testImplementation(testDependencies.junit_jupiter_params)
     testRuntimeOnly(testDependencies.junit_jupiter_engine)
+    testImplementation(testDependencies.assertj)
 }

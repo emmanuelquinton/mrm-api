@@ -1,53 +1,68 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.4.RELEASE'
+	id 'org.springframework.boot' version  "2.2.4.RELEASE"
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	//id 'application'
 }
 
 group = 'org.equinton'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
 
 apply from: 'dependencies.gradle'
 
-configurations {
-	developmentOnly
-	runtimeClasspath {
-		extendsFrom developmentOnly
-	}
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
+//configurations {
+//	developmentOnly
+//	runtimeClasspath {
+//		extendsFrom developmentOnly
+//	}
+//	compileOnly {
+//		extendsFrom annotationProcessor
+//	}
+//}
 
 repositories {
 	mavenCentral()
 }
+//mainClassName = 'org.equinton.mrm.application.MeetingRoomsManagementApplication'
 
 subprojects {
+
 	group = 'org.equinton'
 	version = '0.0.1-SNAPSHOT'
-
-	apply plugin : 'java'
+	apply from: '../dependencies.gradle'
+	apply plugin: 'java'
+	apply plugin: 'idea'
 
 	sourceCompatibility = 1.11
 	repositories {
 		mavenCentral()
 	}
+
+	bootJar {
+		enabled = false
+	}
+
+	jar {
+		enabled = true
+	}
+	test {
+		useJUnitPlatform()
+	}
+
+
+
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-}
-
-test {
-	useJUnitPlatform()
 }
