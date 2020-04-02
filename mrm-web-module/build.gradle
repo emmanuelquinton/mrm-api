@@ -1,0 +1,40 @@
+plugins {
+//    id 'org.springframework.boot' version  "${springBootVersion}"
+//    id 'io.spring.dependency-management'
+    id 'java'
+}
+
+//bootJar {
+//    enabled = false
+//}
+//jar {
+//    enabled = false
+//}
+
+dependencies {
+    implementation project(':mrm-domain-module')
+    //common
+    implementation(commonDependencies.lombok)
+    annotationProcessor(commonDependencies.lombok)
+    implementation(commonDependencies.mapstruct)
+    annotationProcessor(commonDependencies.mapstruct_processor)
+    testAnnotationProcessor(commonDependencies.mapstruct_processor)
+
+    implementation(springbootDependencies.spring_boot_starter)
+
+
+    // web
+
+    implementation(webDependencies.swagger)
+    implementation(webDependencies.swagger_ui)
+    implementation(webDependencies.spring_boot_web)
+
+    // tests
+    testImplementation(testDependencies.assertj)
+    testImplementation(testDependencies.mockito_junit_jupiter)
+    testImplementation(testDependencies.junit_jupiter_api)
+    testImplementation(testDependencies.junit_jupiter_params)
+    testRuntimeOnly(testDependencies.junit_jupiter_engine)
+    testImplementation(springbootDependencies.spring_boot_starter_test)
+    testImplementation(testDependencies.rest_assured)
+}

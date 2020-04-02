@@ -1,5 +1,7 @@
 
 dependencies {
+
+    implementation(springbootDependencies.spring_boot_starter)
     //common
     implementation(commonDependencies.lombok)
     annotationProcessor(commonDependencies.lombok)
@@ -10,4 +12,5 @@ dependencies {
     testImplementation(testDependencies.junit_jupiter_params)
     testRuntimeOnly(testDependencies.junit_jupiter_engine)
     testImplementation(testDependencies.assertj)
+    testImplementation(springbootDependencies.spring_boot_starter_test)
 }
