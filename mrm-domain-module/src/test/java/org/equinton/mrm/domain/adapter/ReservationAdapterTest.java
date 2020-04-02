@@ -3,7 +3,6 @@ package org.equinton.mrm.domain.adapter;
 import org.equinton.mrm.domain.model.MeetingRoom;
 import org.equinton.mrm.domain.model.Reservation;
 import org.equinton.mrm.domain.model.User;
-import org.equinton.mrm.domain.port.ReservationDomainService;
 import org.equinton.mrm.domain.port.ReservationRecord;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +17,6 @@ import java.time.format.DateTimeFormatter;
 
 @ExtendWith(MockitoExtension.class)
 public class ReservationAdapterTest {
-
 
     @InjectMocks
     private ReservationAdapter reservationDomainService;

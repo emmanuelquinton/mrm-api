@@ -15,7 +15,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @EqualsAndHashCode
-public class UserEntity {
+public class UserEntity  {
 
     @Id
     @Column(name = "id", nullable = false, updatable = false)

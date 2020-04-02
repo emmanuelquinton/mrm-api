@@ -1,12 +1,17 @@
 package org.equinton.mrm.domain.model;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Builder
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Data
 public class User {
-
+    private UUID id;
     private String serialNumber;
     private String firstName;
     private String lastName;
