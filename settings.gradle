@@ -1,6 +1,12 @@
+// To variabilize the versions of the plugins
+pluginManagement {
+    plugins {
+        id 'org.springframework.boot' version  "${springBootVersion}"
+    	id 'io.spring.dependency-management' version  "${dependencyManagementVersion}"
+    }
+}
 rootProject.name = 'meeting-rooms-management'
 include 'mrm-domain-module'
 include 'mrm-storage-module'
 include 'mrm-application-module'
 include 'mrm-web-module'
-

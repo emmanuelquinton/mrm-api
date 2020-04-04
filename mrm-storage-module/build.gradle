@@ -1,17 +1,17 @@
 plugins {
-  //  id 'org.springframework.boot' version  "${springBootVersion}"
-//    id 'io.spring.dependency-management'
+    id 'io.spring.dependency-management'
     id 'java'
 }
 
-
-
 dependencies {
     implementation project(':mrm-domain-module')
+
     //common
     implementation(commonDependencies.lombok)
+    implementation(commonDependencies.mapstruct)
+    annotationProcessor(commonDependencies.mapstruct_processor)
     annotationProcessor(commonDependencies.lombok)
-
+    testAnnotationProcessor(commonDependencies.mapstruct_processor)
     // back
     implementation(springbootDependencies.spring_boot_starter)
     implementation(storageDependencies.spring_boot_data_jpa )

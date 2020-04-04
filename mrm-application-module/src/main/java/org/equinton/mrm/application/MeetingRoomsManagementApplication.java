@@ -1,6 +1,7 @@
-package org.equinton.mrm;
+package org.equinton.mrm.application;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -9,5 +10,7 @@ public class MeetingRoomsManagementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MeetingRoomsManagementApplication.class, args);
 	}
+
+
 
 }

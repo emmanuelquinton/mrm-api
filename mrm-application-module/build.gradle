@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+    id 'java'
+}
+
+bootJar {
+    enabled = true
+    mainClassName = "org.equinton.mrm.application.MeetingRoomsManagementApplication"
+}
+jar {
+    enabled = false
+}
+
+dependencies {
+    implementation project(":mrm-domain-module")
+    implementation project(":mrm-storage-module")
+    implementation project(":mrm-web-module")
+
+    implementation(webDependencies.spring_boot_web)
+
+    implementation(springbootDependencies.spring_boot_starter)
+    implementation(springbootDependencies.spring_boot_starter_test)
+
+}
