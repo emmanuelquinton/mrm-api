@@ -25,7 +25,7 @@ import java.util.UUID;
 import static io.restassured.RestAssured.given;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-@ExtendWith(SpringExtension.class)
+
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ReservationControllerTest {
 

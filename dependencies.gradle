@@ -1,6 +1,4 @@
 ext {
-
-    springBootVersion = "2.2.4.RELEASE"
     lombokVersion = "1.18.4"
     mapstructVersion = "1.4.1.Final"
     postgresqlVersion = "42.2.10"
