@@ -1,11 +1,9 @@
 package org.equinton.mrm.storage.entity;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
@@ -18,7 +16,14 @@ import java.util.UUID;
 public class UserEntity  {
 
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     @Column(name = "id", nullable = false, updatable = false)
+
+
     private UUID id;
     @Column
     private String serialNumber;
