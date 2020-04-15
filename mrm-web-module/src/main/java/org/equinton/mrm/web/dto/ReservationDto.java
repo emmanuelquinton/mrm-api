@@ -13,6 +13,7 @@ import org.equinton.mrm.domain.model.User;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 
@@ -25,9 +26,7 @@ public class ReservationDto {
 
     private String userId;
     private String meetingRoom;
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    @JsonSerialize(using = LocalDateSerializer.class)
-    private LocalDate date ;
+    private String date ;
     @JsonDeserialize(using = LocalTimeDeserializer.class)
     @JsonSerialize(using = LocalTimeSerializer.class)
     private LocalTime startTime;
@@ -39,7 +38,7 @@ public class ReservationDto {
         return Reservation.builder()
                 .meetingRoom(MeetingRoom.valueOf(meetingRoom))
                 .user(User.builder().id(UUID.fromString(userId)).build())
-                .date(date)
+                .date( LocalDate.parse(date,DateTimeFormatter.ofPattern("dd/MM/yyy")))
                 .startTime(startTime)
                 .endTime(endTime)
                 .build();

@@ -16,8 +16,8 @@ public class ReservationDtoTest {
 
     @Test
     void should_convert_reservation_dto_to_reservation() {
-        //given
-        LocalDate date = LocalDate.parse("27/02/2020", DateTimeFormatter.ofPattern("dd/MM/yyy"));
+        //given ,
+        LocalDate date = LocalDate.parse("27/02/2020",DateTimeFormatter.ofPattern("dd/MM/yyy"));
         LocalTime startTime = LocalTime.of(11, 00);
         LocalTime endTime = LocalTime.of(12, 30);
 
@@ -25,7 +25,7 @@ public class ReservationDtoTest {
         ReservationDto reservationDto = ReservationDto.builder()
                 .userId(userId)
                 .meetingRoom(MeetingRoom.MORLAIS.name())
-                .date(date)
+                .date("27/02/2020")
                 .startTime(startTime)
                 .endTime(endTime)
                 .build();
