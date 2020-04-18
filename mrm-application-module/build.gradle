@@ -18,6 +18,8 @@ dependencies {
     implementation project(":mrm-web-module")
 
     implementation(webDependencies.spring_boot_web)
+    implementation(webDependencies.swagger)
+    implementation(webDependencies.swagger_ui)
 
     implementation(springbootDependencies.spring_boot_starter)
     implementation(springbootDependencies.spring_boot_starter_test)

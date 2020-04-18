@@ -1,6 +1,8 @@
 package org.equinton.mrm.storage.entity;
 
 import lombok.*;
+import org.equinton.mrm.domain.model.User;
+import org.equinton.mrm.storage.UserMapper;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -31,4 +33,8 @@ public class UserEntity  {
     private String firstName;
     @Column
     private String lastName;
+
+    public User toUser() {
+        return UserMapper.INSTANCE.toDomainObject(this);
+    }
 }
