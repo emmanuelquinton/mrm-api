@@ -18,7 +18,7 @@ public class ReservationController {
         this.reservationDomainService = reservationDomainService;
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<UUID> createReservation(@RequestBody ReservationDto reservation) {
         return ResponseEntity.ok(reservationDomainService.save(reservation.toReservation()).getId());
     }

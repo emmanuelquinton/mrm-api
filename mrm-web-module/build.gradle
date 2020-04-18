@@ -16,6 +16,7 @@ dependencies {
     implementation(webDependencies.swagger)
     implementation(webDependencies.swagger_ui)
     implementation(webDependencies.spring_boot_web)
+    implementation(webDependencies.jackson_datatype)
 
     // tests
     testImplementation(testDependencies.assertj)

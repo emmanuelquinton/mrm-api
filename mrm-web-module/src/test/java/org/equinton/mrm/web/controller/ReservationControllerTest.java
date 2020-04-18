@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
@@ -25,7 +26,7 @@ import java.util.UUID;
 import static io.restassured.RestAssured.given;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-
+@ExtendWith(MockitoExtension.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ReservationControllerTest {
 
@@ -54,7 +55,7 @@ public class ReservationControllerTest {
         ReservationDto reservationDto = ReservationDto.builder()
                 .userId(UUID.randomUUID().toString())
                 .meetingRoom(MeetingRoom.MORLAIS.name())
-                .date(date)
+                .date("27/02/2020")
                 .startTime(startTime)
                 .endTime(endTime)
                 .build();
@@ -79,7 +80,7 @@ public class ReservationControllerTest {
         ReservationDto reservationDto = ReservationDto.builder()
                 .userId(UUID.randomUUID().toString())
                 .meetingRoom(MeetingRoom.BREST.name())
-                .date(date)
+                .date("27/02/2020")
                 .startTime(startTime)
                 .endTime(endTime)
                 .build();

@@ -36,6 +36,6 @@ public class ReservationEntity{
     private String meetingRoom;
 
     public Reservation toReservation() {
-        return null;// ReservationMapper.INSTANCE.toDomainObject(this);
+        return  ReservationMapper.INSTANCE.toDomainObject(this);
     }
 }
