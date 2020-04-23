@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  mrm-db:
+    image: postgres:9.4-alpine
+    container_name: mrm-container
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: mrm-password
+      POSTGRES_USER: mrm-user
+      POSTGRES_DB: mrm-database
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080

@@ -1,1 +1,1 @@
- gradlew.bat clean build bootRun
+gradlew.bat clean build bootRun

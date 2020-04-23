@@ -4,8 +4,6 @@ import org.equinton.mrm.domain.model.Reservation;
 import org.equinton.mrm.domain.port.ReservationDomainService;
 import org.equinton.mrm.domain.port.ReservationRecord;
 
-import javax.lang.model.element.ModuleElement;
-
 public class ReservationAdapter implements ReservationDomainService {
     private ReservationRecord reservationRecord;
 

@@ -18,8 +18,8 @@ dependencies {
     implementation(springbootDependencies.spring_boot_starter)
     implementation(storageDependencies.spring_boot_data_jpa )
     implementation(storageDependencies.postgres )
+    implementation(storageDependencies.liquibase)
     runtimeOnly(storageDependencies.h2)
-
     // tests
     testImplementation(testDependencies.assertj)
     testImplementation(testDependencies.mockito_junit_jupiter)
