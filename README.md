@@ -8,4 +8,19 @@ A simple API to manage meeting rooms.
 ### prerequisites 
 * jdk 11
 * springboot 2.2.4.RELEASE
-* Postgres SQL"# meeting-rooms-management" 
+* spring data jpa
+* swagger 
+* liquibase
+* Postgres SQL
+
+
+* Docker
+
+##Run application
+### via script
+
+### via docker
+
+### via intellij
+
+

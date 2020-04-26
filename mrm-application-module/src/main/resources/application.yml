@@ -1,0 +1,5 @@
+  spring:
+    application:
+      name: mrm
+    config:
+      additional-location: file:**/storage-application.yml

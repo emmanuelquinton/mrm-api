@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="1" author="e.quinton" failOnError="true">
+        <sql splitStatements="true" stripComments="false">CREATE SCHEMA IF NOT EXISTS mrm;</sql>
+    </changeSet>
+    <changeSet id="2" author="e.quinton">
+        <createTable tableName="person">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="serialNumber" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstName" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastName" type="varchar(150)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="meeting_room">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="floor" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="reservation">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="starTime" type="time">
+                <constraints nullable="false"/>
+            </column>
+            <column name="endTime" type="time">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meeting_room" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="reservation" baseColumnNames="user_id"
+                                 constraintName="fk_reservation_user"
+                                 referencedTableName="person"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

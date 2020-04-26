@@ -1,9 +1,6 @@
 package org.equinton.mrm.domain.adapter;
 
-import org.equinton.mrm.domain.model.Reservation;
 import org.equinton.mrm.domain.model.User;
-import org.equinton.mrm.domain.port.ReservationDomainService;
-import org.equinton.mrm.domain.port.ReservationRecord;
 import org.equinton.mrm.domain.port.UserDomainService;
 import org.equinton.mrm.domain.port.UserRecord;
 

@@ -1,0 +1,13 @@
+spring:
+    liquibase:
+        drop-first: true
+        user: sa
+        password: password
+        change-log: classpath:db/changelog/liquibase-changelog.xml
+    datasource:
+        url: jdbc:h2:mem:testdb
+        driverClassName: org.h2.Driver
+        username: sa
+        password: password
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
