@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mrm-adminer-deployment
+  namespace: mrm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: mrm-adminer
+  template:
+    metadata:
+      labels:
+        k8s-app: mrm-adminer
+    spec:
+      containers:
+        - name: mrm-adminer
+          image: adminer
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              hostPort: 8081

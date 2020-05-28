@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mrm-db
+  namespace: mrm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: mrm-db
+  template:
+    metadata:
+      labels:
+        k8s-app: mrm-db
+    spec:
+      containers:
+        - name: mrm-db
+          image:  postgres:9.4-alpine
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5432
+              hostPort: 5432
+              name: mrm-db
+          env:
+            - name: POSTGRES_PASSWORD
+              value: mrm-password
+            - name: POSTGRES_USER
+              value: mrm-user
+            - name: POSTGRES_DB
+              value: mrm-database 

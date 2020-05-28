@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mrm-db
+  namespace: mrm
+  labels:
+    k8s-app: mrm-db
+spec:
+  type: NodePort
+  ports:
+    - name: mrm-db
+      port: 5432
+      targetPort: 5432
+  selector:
+    k8s-app:  mrm-db

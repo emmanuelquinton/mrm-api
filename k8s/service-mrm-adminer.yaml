@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mrm-adminer
+  namespace: mrm
+  labels:
+    k8s-app: mrm-adminer
+spec:
+  type: NodePort
+  ports:
+    - name: mrm-adminer
+      port: 81
+      targetPort: 8081
+  selector:
+    k8s-app:  mrm-adminer

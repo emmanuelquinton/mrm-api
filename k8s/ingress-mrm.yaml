@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: mrm-ingress
+  namespace: mrm
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: mrm.api.dev
+      http:
+        paths:
+          - backend:
+              serviceName: mrm-api
+              servicePort: 8080
+    - host: mrm.adminer.dev
+      http:
+        paths:
+          - backend:
+              serviceName: mrm-adminer
+              servicePort: 8081

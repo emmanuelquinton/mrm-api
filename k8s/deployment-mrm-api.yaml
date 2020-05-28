@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mrm-deployment
+  namespace: mrm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: mrm-api
+  template:
+    metadata:
+      labels:
+        k8s-app: mrm-api
+    spec:
+      containers:
+        - name: mrm-api
+          image: meeting-rooms-management_mrm-api
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+         
