@@ -2,6 +2,7 @@ package org.equinton.mrm.domain.model;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -10,7 +11,7 @@ import java.util.UUID;
 @Getter
 @EqualsAndHashCode
 @ToString
-public class Reservation {
+public class Reservation implements Serializable {
     private UUID id;
     private  User user;
     private MeetingRoom meetingRoom;
