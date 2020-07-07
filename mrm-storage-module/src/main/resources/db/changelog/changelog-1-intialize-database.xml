@@ -7,22 +7,22 @@
         <sql splitStatements="true" stripComments="false">CREATE SCHEMA IF NOT EXISTS mrm;</sql>
     </changeSet>
     <changeSet id="2" author="e.quinton">
-        <createTable tableName="person">
+        <createTable tableName="person" schemaName="mrm">
             <column name="id" type="uuid">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="serialNumber" type="varchar(10)">
+            <column name="serial_number" type="varchar(10)">
                 <constraints nullable="false"/>
             </column>
-            <column name="firstName" type="varchar(50)">
+            <column name="first_name" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>
-            <column name="lastName" type="varchar(150)">
+            <column name="last_name" type="varchar(150)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <createTable tableName="meeting_room">
+        <createTable tableName="meeting_room" schemaName="mrm">
             <column name="id" type="uuid">
                 <constraints primaryKey="true"/>
             </column>
@@ -34,17 +34,17 @@
             </column>
         </createTable>
 
-        <createTable tableName="reservation">
+        <createTable tableName="reservation"  schemaName="mrm">
             <column name="id" type="uuid">
                 <constraints primaryKey="true"/>
             </column>
             <column name="date" type="date">
                 <constraints nullable="false"/>
             </column>
-            <column name="starTime" type="time">
+            <column name="start_time" type="time">
                 <constraints nullable="false"/>
             </column>
-            <column name="endTime" type="time">
+            <column name="end_time" type="time">
                 <constraints nullable="false"/>
             </column>
             <column name="user_id" type="uuid">
@@ -55,9 +55,9 @@
             </column>
         </createTable>
 
-        <addForeignKeyConstraint baseTableName="reservation" baseColumnNames="user_id"
+        <addForeignKeyConstraint baseTableName="reservation" baseColumnNames="user_id" baseTableSchemaName="mrm"
                                  constraintName="fk_reservation_user"
-                                 referencedTableName="person"
+                                 referencedTableName="person" referencedTableSchemaName="mrm"
                                  referencedColumnNames="id"/>
     </changeSet>
 

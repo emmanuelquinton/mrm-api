@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name = "meeting_room")
+@Table(name = "meeting_room" , schema = "mrm")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

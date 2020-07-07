@@ -5,11 +5,16 @@ dependencies {
     implementation(commonDependencies.lombok)
     annotationProcessor(commonDependencies.lombok)
 
+    //event
+    implementation(eventDependencies.solace_ampq)
+
     // tests
     testImplementation(testDependencies.mockito_junit_jupiter)
     testImplementation(testDependencies.junit_jupiter_api)
     testImplementation(testDependencies.junit_jupiter_params)
     testRuntimeOnly(testDependencies.junit_jupiter_engine)
     testImplementation(testDependencies.assertj)
+
+
 
 }

@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -38,7 +39,7 @@ public class ReservationControllerTest {
     @InjectMocks
     private ReservationController reservationController;
 
-    @Mock
+    @MockBean
     private ReservationDomainService reservationDomainService;
 
     @PostConstruct
@@ -48,6 +49,8 @@ public class ReservationControllerTest {
 
     @Test
     void should_post_reservation() throws JsonProcessingException {
+
+
         LocalDate date = LocalDate.parse("27/02/2020", DateTimeFormatter.ofPattern("dd/MM/yyy"));
         LocalTime startTime = LocalTime.of(11, 00);
         LocalTime endTime = LocalTime.of(12, 30);
@@ -59,9 +62,11 @@ public class ReservationControllerTest {
                 .startTime(startTime)
                 .endTime(endTime)
                 .build();
-        String payload = mapper.writeValueAsString(reservationDto);
+        Mockito.when(reservationDomainService.save(reservationDto.toReservation()))
+                .thenReturn(reservationDto.toReservation());
 
-        given()
+        String payload = mapper.writeValueAsString(reservationDto);
+             given()
                 .contentType(ContentType.JSON)
                 .body(payload)
         .when()

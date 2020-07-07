@@ -5,12 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Data
-public class User {
+public class User implements Serializable {
     private UUID id;
     private String serialNumber;
     private String firstName;

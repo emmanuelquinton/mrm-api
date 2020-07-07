@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "person")
+@Table(name = "person", schema = "mrm")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,11 +27,11 @@ public class UserEntity  {
 
 
     private UUID id;
-    @Column
+    @Column(name = "serial_number" )
     private String serialNumber;
-    @Column
+    @Column(name = "first_name" )
     private String firstName;
-    @Column
+    @Column(name = "last_name" )
     private String lastName;
 
     public User toUser() {

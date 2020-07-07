@@ -11,7 +11,7 @@ import java.time.LocalTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "reservation")
+@Table(name = "reservation" , schema = "mrm")
 @Builder
 @Getter
 public class ReservationEntity{
@@ -26,9 +26,9 @@ public class ReservationEntity{
     private UUID id;
     @Column
     private LocalDate date;
-    @Column
+    @Column(name = "start_time" )
     private LocalTime startTime;
-    @Column
+    @Column(name = "end_time" )
     private LocalTime endTime;
     @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity user;
