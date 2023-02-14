@@ -1,6 +1,9 @@
 {
+  "groupName": "all",
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
-  ]
+  ],
+  "baseBranches": ["chore/renovate"]
+
 }
