@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11-jre-hotspot
+FROM adoptopenjdk:11.0.11_9-jre-hotspot
 WORKDIR /mrm
 
 COPY mrm-application-module/build/libs/*.jar /app/lib/mrm.jar
