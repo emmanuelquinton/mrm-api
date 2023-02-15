@@ -45,7 +45,7 @@ ext {
     ]
 
     eventDependencies = [
-            solace_ampq: "org.apache.qpid:qpid-jms-client:0.51.0"
+            solace_ampq: "org.apache.qpid:qpid-jms-client:0.61.0"
     ]
 
 
