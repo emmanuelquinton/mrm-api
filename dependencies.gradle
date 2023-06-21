@@ -40,7 +40,7 @@ ext {
     storageDependencies = [
             spring_boot_data_jpa :  "org.springframework.boot:spring-boot-starter-data-jpa:"+springBootVersion,
             postgres : "org.postgresql:postgresql:"+postgresqlVersion,
-            h2:"com.h2database:h2:1.4.197",
+            h2:"com.h2database:h2:1.4.200",
             liquibase:"org.liquibase:liquibase-core:"+liquibaseVersion
     ]
 
