@@ -10,7 +10,7 @@ ext {
     junitVersion = "5.6.0"
     mockitoVersion = "3.3.0"
     restAssuredVersion=  "4.3.0"
-    jackonDataTypeVersion= "2.6.3"
+    jackonDataTypeVersion= "2.22.2"
     testDependencies = [
             junit_jupiter_api   : "org.junit.jupiter:junit-jupiter-api:" + junitVersion,
             junit_jupiter_params: "org.junit.jupiter:junit-jupiter-params:" + junitVersion,
